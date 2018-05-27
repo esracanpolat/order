@@ -10,8 +10,8 @@ Survey modülü portal uygulamasına bağlıdır.Bu yüzden https://github.com/k
     "repositories"
     
     '{
-	 		"type": "vcs",
-	 	  "url": "https://github.com/xeldarin/survey.git"
+	 "type": "vcs",
+	 "url": "https://github.com/xeldarin/survey.git"
 	  }'
 	ve
 	  "require"
@@ -19,10 +19,10 @@ Survey modülü portal uygulamasına bağlıdır.Bu yüzden https://github.com/k
    
    olacak şekilde eklenmelidir.Bu kodlar sayesinde composer modülümüzü gerekli olarak görüp bileşenleri dosyaya ekleyecektir.
    
-   İkinci adımda portal/backend/config/main.php ve portal/frontend/config/main.php dosyalarında
-   'modules'
-   
-    'survey' => [
+   İkinci adımda @app/backend/config/main.php ve @app/frontend/config/main.php dosyalarında
+   	
+	'modules'
+   	'survey' => [
 			'class' => 'kouosl\survey\Module'
 			],
   şeklinde eklenmelidir.Bu adımlardan sonra portal klasöründe komut satırını açarak 
@@ -31,14 +31,14 @@ Survey modülü portal uygulamasına bağlıdır.Bu yüzden https://github.com/k
       
    komutu yazılır ve modülümüz portal dosyasına yüklenir. 
 # Veri tabanı kurulum
-	Modülümüzün içindeyken
-		'yii migrate/create survey'
-	yazıldıktan sonra 
-		"@app\console\migrations"
-	konumundaki dosyanın adı kopyalanır ve modülümüzün içinde bulunan migration klasöründeki dosyanın adıyla değiştirilir ve iç kısmındaki isim de değiştirilir.
-	Daha sonra modülün içerisindeyken
-		'php yii migrate --migrationPath=@vendor/kouosl/survey/migrations --interactive=0'
-	komutu yazılır ve veri tabanımızı başarılı bir şekilde kendi sunucumuza taşımış oluruz.
+Modülümüzün içindeyken
+	'yii migrate/create survey'
+yazıldıktan sonra 
+	"@app\console\migrations"
+konumundaki dosyanın adı kopyalanır ve modülümüzün içinde bulunan migration klasöründeki dosyanın adıyla değiştirilir ve iç kısmındaki isim de değiştirilir.
+Daha sonra modülün içerisindeyken
+	'php yii migrate --migrationPath=@vendor/kouosl/survey/migrations --interactive=0'
+komutu yazılır ve veri tabanımızı başarılı bir şekilde kendi sunucumuza taşımış oluruz.
    
 # Modül amacı
    Adminlerin giriş yaptıktan sonra anket ekleme,silme,düzenleme,arama gibi işlemleri yapması amaçlanmıştır.
