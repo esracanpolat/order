@@ -1,10 +1,10 @@
-## survey
+## Survey
 Frontend sayfasına ulaşmak için url   .../survey şeklinde girilmelidir.
 Backend sayfasına ulaşmak için url    .../admin/survey şeklinde girilmelidir.
 Frontend sayfasında crud işlemi için   .../survey/survey/ şeklinde girilmelidir.
 Backend sayfasında crud işlemi için   .../admin/survey/survey/ şeklinde girilmelidir.
 
-# kurulum
+# Kurulum
 Survey modülü portal uygulamasına bağlıdır.Bu yüzden https://github.com/kouosl/portal adresinden portalın kurulduğundan emin olduktan sonra portal dosyasındaki composer.json dosyasında 
 
     "repositories"
@@ -13,7 +13,8 @@ Survey modülü portal uygulamasına bağlıdır.Bu yüzden https://github.com/k
 	 "type": "vcs",
 	 "url": "https://github.com/xeldarin/survey.git"
 	  }'
-	ve
+ve
+
 	  "require"
 	  '"kouosl/survey": "dev-master",'
    
