@@ -32,11 +32,14 @@ Survey modülü portal uygulamasına bağlıdır.Bu yüzden https://github.com/k
    komutu yazılır ve modülümüz portal dosyasına yüklenir. 
 # Veri tabanı kurulum
 Modülümüzün içindeyken
+
 	'yii migrate/create survey'
 yazıldıktan sonra 
+
 	"@app\console\migrations"
 konumundaki dosyanın adı kopyalanır ve modülümüzün içinde bulunan migration klasöründeki dosyanın adıyla değiştirilir ve iç kısmındaki isim de değiştirilir.
 Daha sonra modülün içerisindeyken
+
 	'php yii migrate --migrationPath=@vendor/kouosl/survey/migrations --interactive=0'
 komutu yazılır ve veri tabanımızı başarılı bir şekilde kendi sunucumuza taşımış oluruz.
    
