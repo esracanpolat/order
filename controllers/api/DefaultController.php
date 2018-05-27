@@ -1,12 +1,11 @@
 <?php
 
-namespace kouosl\survey\controllers\api;
+namespace kouosl\survey\controllers\backend;
 
-
-class DefaultController extends \kouosl\base\controllers\api\BaseController
+class DefaultController extends \kouosl\base\controllers\backend\BaseController
 {
-    public function actionIndex(){
-        return ['status' => 1, 'action' => 'index','controller' => 'default'];
+    public function actionIndex()
+    {
+        return $this->render('_index');
     }
-
 }

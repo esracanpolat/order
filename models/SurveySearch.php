@@ -5,25 +5,26 @@ namespace kouosl\survey\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
+use kouosl\survey\models\Survey;
 
 /**
- * SampleSearch represents the model behind the search form about `app\modules\sample\models\Sample`.
+ * SurveySearch represents the model behind the search form of `kouosl\survey\models\Survey`.
  */
-class SurveysSearch extends Surveys
+class SurveySearch extends Survey
 {
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function rules()
     {
         return [
             [['id'], 'integer'],
-            [['title', 'description'], 'safe'],
+            [['title', 'content', 'question', 'answer'], 'safe'],
         ];
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function scenarios()
     {
@@ -40,7 +41,9 @@ class SurveysSearch extends Surveys
      */
     public function search($params)
     {
-        $query = Surveys::find();
+        $query = Survey::find();
+
+        // add conditions that should always apply here
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
@@ -54,12 +57,15 @@ class SurveysSearch extends Surveys
             return $dataProvider;
         }
 
+        // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
         ]);
 
         $query->andFilterWhere(['like', 'title', $this->title])
-            ->andFilterWhere(['like', 'description', $this->description]);
+            ->andFilterWhere(['like', 'content', $this->content])
+            ->andFilterWhere(['like', 'question', $this->question])
+            ->andFilterWhere(['like', 'answer', $this->answer]);
 
         return $dataProvider;
     }
