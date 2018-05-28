@@ -1,16 +1,16 @@
 <?php
 
-namespace kouosl\survey\models;
+namespace kouosl\order\models;
 
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use kouosl\survey\models\Survey;
+use kouosl\order\models\Order;
 
 /**
- * SurveySearch represents the model behind the search form of `kouosl\survey\models\Survey`.
+ * OrderSearch represents the model behind the search form of `kouosl\order\models\Order`.
  */
-class SurveySearch extends Survey
+class OrderSearch extends Order
 {
     /**
      * {@inheritdoc}
@@ -41,7 +41,7 @@ class SurveySearch extends Survey
      */
     public function search($params)
     {
-        $query = Survey::find();
+        $query = Order::find();
 
         // add conditions that should always apply here
 

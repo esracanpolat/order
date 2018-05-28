@@ -8,7 +8,7 @@ use kouosl\theme\helpers\Html;
 
 
 
-$this->title 	= 'Surveys Manage';
+$this->title 	= 'Orders Manage';
 $data['title'] 	= $this->title;
 $this->params['breadcrumbs'][] = $this->title;
 

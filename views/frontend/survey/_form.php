@@ -4,11 +4,11 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model kouosl\survey\models\Survey */
+/* @var $model kouosl\order\models\Order */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="survey-form">
+<div class="order-form">
 
     <?php $form = ActiveForm::begin(); ?>
 

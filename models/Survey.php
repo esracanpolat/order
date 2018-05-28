@@ -1,11 +1,11 @@
 <?php
 
-namespace kouosl\survey\models;
+namespace kouosl\order\models;
 
 use Yii;
 
 /**
- * This is the model class for table "survey".
+ * This is the model class for table "order".
  *
  * @property int $id
  * @property string $title
@@ -13,16 +13,16 @@ use Yii;
  * @property string $question
  * @property string $answer
  *
- * @property SurveyAnswer[] $surveyAnswers
+ * @property OrderAnswer[] $orderAnswers
  */
-class Survey extends \yii\db\ActiveRecord
+class Order extends \yii\db\ActiveRecord
 {
     /**
      * {@inheritdoc}
      */
     public static function tableName()
     {
-        return 'survey';
+        return 'order';
     }
 
     /**
@@ -54,8 +54,8 @@ class Survey extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getSurveyAnswers()
+    public function getOrderAnswers()
     {
-        return $this->hasMany(SurveyAnswer::className(), ['survey_id' => 'id']);
+        return $this->hasMany(OrderAnswer::className(), ['order_id' => 'id']);
     }
 }

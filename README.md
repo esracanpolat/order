@@ -2,33 +2,33 @@
 # order
   
 =======
-## Survey
-Frontend sayfasına ulaşmak için url   .../survey şeklinde girilmelidir.
-Backend sayfasına ulaşmak için url    .../admin/survey şeklinde girilmelidir.
-Frontend sayfasında crud işlemi için   .../survey/survey/ şeklinde girilmelidir.
-Backend sayfasında crud işlemi için   .../admin/survey/survey/ şeklinde girilmelidir.
+## Order
+Frontend sayfasına ulaşmak için url   .../order şeklinde girilmelidir.
+Backend sayfasına ulaşmak için url    .../admin/order şeklinde girilmelidir.
+Frontend sayfasında crud işlemi için   .../order/order/ şeklinde girilmelidir.
+Backend sayfasında crud işlemi için   .../admin/order/order/ şeklinde girilmelidir.
 
 # Kurulum
-Survey modülü portal uygulamasına bağlıdır.Bu yüzden https://github.com/kouosl/portal adresinden portalın kurulduğundan emin olduktan sonra portal dosyasındaki composer.json dosyasında 
+Order modülü portal uygulamasına bağlıdır.Bu yüzden https://github.com/kouosl/portal adresinden portalın kurulduğundan emin olduktan sonra portal dosyasındaki composer.json dosyasında 
 
     "repositories"
     
     '{
 	 "type": "vcs",
-	 "url": "https://github.com/xeldarin/survey.git"
+	 "url": "https://github.com/xeldarin/order.git"
 	  }'
 ve
 
 	  "require"
-	  '"kouosl/survey": "dev-master",'
+	  '"kouosl/order": "dev-master",'
    
    olacak şekilde eklenmelidir.Bu kodlar sayesinde composer modülümüzü gerekli olarak görüp bileşenleri dosyaya ekleyecektir.
    
    İkinci adımda @app/backend/config/main.php ve @app/frontend/config/main.php dosyalarında
    	
 	'modules'
-   	'survey' => [
-			'class' => 'kouosl\survey\Module'
+   	'order' => [
+			'class' => 'kouosl\order\Module'
 			],
   şeklinde eklenmelidir.Bu adımlardan sonra portal klasöründe komut satırını açarak 
       
@@ -38,14 +38,14 @@ ve
 # Veri tabanı kurulum
 Modülümüzün içindeyken
 
-	'yii migrate/create survey'
+	'yii migrate/create order'
 yazıldıktan sonra 
 
 	"@app\console\migrations"
 konumundaki dosyanın adı kopyalanır ve modülümüzün içinde bulunan migration klasöründeki dosyanın adıyla değiştirilir ve iç kısmındaki isim de değiştirilir.
 Daha sonra modülün içerisindeyken
 
-	'php yii migrate --migrationPath=@vendor/kouosl/survey/migrations --interactive=0'
+	'php yii migrate --migrationPath=@vendor/kouosl/order/migrations --interactive=0'
 komutu yazılır ve veri tabanımızı başarılı bir şekilde kendi sunucumuza taşımış oluruz.
    
 # Modül amacı

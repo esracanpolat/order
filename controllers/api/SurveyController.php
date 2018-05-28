@@ -1,18 +1,18 @@
 <?php
 
-namespace kouosl\survey\controllers\backend;
+namespace kouosl\order\controllers\backend;
 
 use Yii;
-use kouosl\survey\models\Survey;
-use kouosl\survey\models\SurveySearch;
+use kouosl\order\models\Order;
+use kouosl\order\models\OrderSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * SurveyController implements the CRUD actions for Survey model.
+ * OrderController implements the CRUD actions for Order model.
  */
-class SurveyController extends Controller
+class OrderController extends Controller
 {
     /**
      * @inheritdoc
@@ -30,12 +30,12 @@ class SurveyController extends Controller
     }
 
     /**
-     * Lists all Survey models.
+     * Lists all Order models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new SurveySearch();
+        $searchModel = new OrderSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -45,7 +45,7 @@ class SurveyController extends Controller
     }
 
     /**
-     * Displays a single Survey model.
+     * Displays a single Order model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -58,13 +58,13 @@ class SurveyController extends Controller
     }
 
     /**
-     * Creates a new Survey model.
+     * Creates a new Order model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Survey();
+        $model = new Order();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -76,7 +76,7 @@ class SurveyController extends Controller
     }
 
     /**
-     * Updates an existing Survey model.
+     * Updates an existing Order model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -96,7 +96,7 @@ class SurveyController extends Controller
     }
 
     /**
-     * Deletes an existing Survey model.
+     * Deletes an existing Order model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -110,15 +110,15 @@ class SurveyController extends Controller
     }
 
     /**
-     * Finds the Survey model based on its primary key value.
+     * Finds the Order model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Survey the loaded model
+     * @return Order the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Survey::findOne($id)) !== null) {
+        if (($model = Order::findOne($id)) !== null) {
             return $model;
         }
 

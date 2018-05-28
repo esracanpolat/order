@@ -4,16 +4,16 @@ use yii\db\Schema;
 use yii\db\Migration;
 
 /**
- * Class m180501_211845_survey
+ * Class m180501_211845_order
  */
-class m180501_211845_survey extends Migration
+class m180501_211845_order extends Migration
 {
     /**
      * {@inheritdoc}
      */
     public function safeUp()
     {
-	$this->createTable('survey', array(
+	$this->createTable('order', array(
             'id' => 'pk',
             'title' => 'string NOT NULL',
             'content' => 'text',
@@ -27,7 +27,7 @@ class m180501_211845_survey extends Migration
      */
     public function safeDown()
     {
-        $this->dropTable('survey');
+        $this->dropTable('order');
     }
 
     /*
@@ -39,7 +39,7 @@ class m180501_211845_survey extends Migration
 
     public function down()
     {
-        echo "m180501_211845_survey cannot be reverted.\n";
+        echo "m180501_211845_order cannot be reverted.\n";
 
         return false;
     }
