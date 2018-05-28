@@ -3,7 +3,7 @@
 namespace kouosl\order\controllers\frontend;
 
 
-class DefaultController extends \kouosl\base\controllers\backend\BaseController
+class OrderController extends \kouosl\base\controllers\backend\BaseController
 {
     public function actionIndex()
     {

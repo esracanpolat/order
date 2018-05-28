@@ -1,13 +1,13 @@
 <?php
 
-namespace kouosl\survey\controllers\api;
+namespace kouosl\order\controllers\api;
 
-use kouosl\survey\models\Surveys;
+use kouosl\order\models\Order;
 use Yii;
 
-class SurveysController extends DefaultController {
+class OrderController extends DefaultController {
 	
-	public $modelClass = 'kouosl\survey\models\Surveys';
+	public $modelClass = 'kouosl\order\models\Order';
 	
 	public function actions() {
 		$actions = parent::actions ();
@@ -17,7 +17,7 @@ class SurveysController extends DefaultController {
 	
 	public function actionView($id){
 
-		$model = Surveys::findOne($id);
+		$model = Order::findOne($id);
 		
 		if(!$model)
 			return ['status' => '404','message' => 'Not Found'];
@@ -26,14 +26,14 @@ class SurveysController extends DefaultController {
 	}
 	
 	public function actionIndex(){
-		return Surveys::find()->all();
+		return Order::find()->all();
 	}
 	
 	public function actionCreate(){
 
 		$postParams = yii::$app->request->post();
 		
-		$model = new Surveys();
+		$model = new Order();
 	
 		
 		if($model->load($postParams,'') && $model->validate()){
@@ -51,7 +51,7 @@ class SurveysController extends DefaultController {
 
 		$postParams = yii::$app->request->post();
 		
-		$model = Surveys::findOne($id);
+		$model = Order::findOne($id);
 
 		if($model = $this->LoadModel($model, $postParams)){
 				if($model->save())
@@ -64,7 +64,7 @@ class SurveysController extends DefaultController {
 	
 	public function actionDelete($id){
 		
-		if(Surveys::findOne($id)->delete())
+		if(Order::findOne($id)->delete())
 			return ['status' => 1];
 		else
 			return ['stauts' => 100];

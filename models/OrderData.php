@@ -1,6 +1,6 @@
 <?php
 
-namespace kouosl\survey\models;
+namespace kouosl\order\models;
 
 use Yii;
 
@@ -13,14 +13,14 @@ use Yii;
  *
  * @property Samples $sample
  */
-class SurveyData extends \yii\db\ActiveRecord
+class OrderData extends \yii\db\ActiveRecord
 {
     /**
      * @inheritdoc
      */
     public static function tableName()
     {
-        return 'survey_data';
+        return 'order_data';
     }
 
     /**
@@ -32,7 +32,7 @@ class SurveyData extends \yii\db\ActiveRecord
             [['name', 'sample_id'], 'required'],
             [['sample_id'], 'integer'],
             [['name'], 'string', 'max' => 255],
-            [['survey_id'], 'exist', 'skipOnError' => true, 'targetClass' => Surveys::className(), 'targetAttribute' => ['survey_id' => 'id']],
+            [['order_id'], 'exist', 'skipOnError' => true, 'targetClass' => Order::className(), 'targetAttribute' => ['order_id' => 'id']],
         ];
     }
 
@@ -44,15 +44,15 @@ class SurveyData extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'name' => 'Name',
-            'survey_id' => 'Survey ID',
+            'order_id' => 'Order ID',
         ];
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getSurvey()
+    public function getOrder()
     {
-        return $this->hasOne(Surveys::className(), ['id' => 'survey_id']);
+        return $this->hasOne(Order::className(), ['id' => 'order_id']);
     }
 }

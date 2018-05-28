@@ -1,6 +1,6 @@
 <?php
 
-namespace kouosl\survey\controllers\console;
+namespace kouosl\order\controllers\console;
 
 
 /**

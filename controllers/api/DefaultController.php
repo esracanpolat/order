@@ -1,6 +1,6 @@
 <?php
 
-namespace kouosl\survey\controllers\api;
+namespace kouosl\order\controllers\api;
 
 
 class DefaultController extends \kouosl\base\controllers\api\BaseController

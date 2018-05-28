@@ -1,6 +1,6 @@
 <?php
 
-namespace kouosl\survey\models;
+namespace kouosl\order\models;
 
 use Yii;
 use yii\base\Model;
@@ -9,7 +9,7 @@ use yii\data\ActiveDataProvider;
 /**
  * SampleSearch represents the model behind the search form about `app\modules\sample\models\Sample`.
  */
-class SurveysSearch extends Surveys
+class OrderSearch extends Order
 {
     /**
      * @inheritdoc
@@ -40,7 +40,7 @@ class SurveysSearch extends Surveys
      */
     public function search($params)
     {
-        $query = Surveys::find();
+        $query = Order::find();
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
