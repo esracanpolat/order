@@ -75,7 +75,7 @@ class Module extends \kouosl\base\Module
             [
                 'class' => 'yii\rest\UrlRule',
                 'controller' => [
-                    'survey/surveys',
+                    'survey/survey',
                 ],
                 'tokens' => [
                     '{id}' => '<id:\\w+>'
